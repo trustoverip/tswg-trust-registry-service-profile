@@ -22,8 +22,7 @@ and self-sovereign identity systems. Some of the possible advantages include:
 
 - service and profile crawlers become possible, enabling better service
 discovery and interoperability across services. 
-- better descriptive power for individual services
-- composibility of capabilities for succinct representation of capabilities.
+- better descriptive power for individual services composibility of capabilities for succinct representation of capabilities.
 
 ### Objective
 
@@ -123,10 +122,6 @@ decentralized identifier (DID), profile type, creation timestamp, media type,
 version, and descriptive elements that collectively contribute to the profile's
 identity and purpose.
 
-**Service Descriptors:** Here, we will define the capabilities or services linked to the profile
-data, but is not included in this version. By specifying the functionalities that the profile embodies, this section
-clarifies the utility and scope of the profile within the DID ecosystem. 
-
 **Proof:** This component encapsulates information related to the authentication and integrity verification of the profile data. Various properties, including the proof type, creation timestamp, proof value, and verification method, work in
 concert to substantiate the authenticity of the profile's content and source.
 
@@ -142,7 +137,6 @@ seamless interactions and enriched service discovery experiences.
 graph LR
     subgraph Profile Document
         Metadata[Metadata]
-        Descriptors[Service Descriptors]
         Proofs[Proofs]
     end
 ```
@@ -286,3 +280,21 @@ The following describes a sample profile document.
 }
 ```
 
+
+### Future Work
+
+**Service Descriptors and Capability Declarations** We intentionally excluded a
+feature from this specification that we are eager to explore in future versions.
+This pertains to defining the capabilities or services associated with the
+profile data. By outlining the functions embodied by the profile, this section
+provides clarity on the profile's purpose and its role within the DID ecosystem.
+
+### References
+
+- Initial Proposal: https://github.com/trustoverip/tswg-trust-registry-tf/discussions/96
+- DID Linked Resources :
+  https://docs.google.com/presentation/u/0/?usp=slides_web : useful for
+  understanding metadata.
+- DID Core: https://www.w3.org/TR/did-core/ - Referenced mainly the DID Core spec.
+- DID Comm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
+  for understanding how to update the service endpoint of the DID Document.
