@@ -296,5 +296,5 @@ provides clarity on the profile's purpose and its role within the DID ecosystem.
   https://docs.google.com/presentation/u/0/?usp=slides_web : useful for
   understanding metadata.
 - DID Core: https://www.w3.org/TR/did-core/ - Referenced mainly the DID Core spec.
-- DID Comm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
+- DIDComm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
   for understanding how to update the service endpoint of the DID Document.
