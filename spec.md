@@ -33,6 +33,29 @@ spec offers a straightforward yet effective discovery layer for both legacy and
 new trust registry services. The intended audience includes individuals or
 entities seeking to improve service interoperability with their existing services or on new services.
 
+### Example
+
+In this example, we illustrate a practical example of profiles. We have a Service that
+complies with the Trust Registry Protocol v2 specification developed by Trust Over IP. 
+This Service exposes an endpoint capable of accommodating multiple profiles. 
+When sharing the Service's DID Document, we also share a Profile object with the endpoint, 
+indicating its support for the Trust Registry Protocol v2 Profile. The client now knows what the service 
+endpoint described supports, and how to interact with that service.
+
+```mermaid
+graph TD
+  subgraph Profiles
+    TRPv2[TRPv2Profile]
+    CustomProfile[CustomProfile]
+  end
+  TRPv2Spec[Trust Registry Profile] -->|describes| TRPv2
+  TRPService[Service]
+  TRPv2  -->|implements| TRPService
+  TRPService --> |presents profile in DID Document to| Endpoint
+  Endpoint -.-|supports| TRPv2
+  Endpoint -.-|supports| CustomProfile
+```
+
 ### Service Endpoint Profile Specification
 
 The data structure outlined in this specification is designed to establish a
