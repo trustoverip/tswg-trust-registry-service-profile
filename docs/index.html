@@ -133,12 +133,10 @@ seamless interactions and enriched service discovery experiences.</p>
 <li class='ui item' >The document <strong>MUST</strong> contain a <code>profileType</code> property. If present, is a string indicating the specific type or category of the profile. This property can help categorize and classify the profile data further.</li>
 <li class='ui item' >The document MAY contain a <code>checksum</code> property. If present, holds a string value representing a checksum. This checksum can be used to verify the integrity of the profile data, ensuring that it has not been tampered with.</li>
 <li class='ui item' >The document MAY contain a <code>created</code> property, which is an ISO-8601 timestamp indicating the date and time when the profile data was created or initially recorded.</li>
-<li class='ui item' >The document MAY contain a <code>mediaType</code> property, if present, indicates the media type of the content within the profile. This property can specify the format or structure of the profile data content.</li>
 <li class='ui item' >The document MAY contain a <code>name</code> property, if provided, is a human-readable name assigned to the profile. It offers a recognizable label for the profile data.</li>
 <li class='ui item' >The document MAY contain a <code>previous</code> property. If included, refers to a previous CID of the profile data. This reference can facilitate tracking changes and updates to the profile.</li>
 <li class='ui item' >The document MAY contain a <code>description</code> property. if given, offers a detailed textual description of the profile. This description can provide insights into the purpose, content, and usage of the profile data.</li>
 <li class='ui item' >The document MAY contain a <code>short_description</code> property. If available, provides a succinct summary or brief overview of the profile. This summary can be useful for quick references.</li>
-<li class='ui item' >The document MAY contain a <code>validity_period</code> property. When present, contains a combined date-time string representing the period during which the profile data is considered valid. This property helps manage the temporal validity of the data.</li>
 <li class='ui item' >The document MAY contain a <code>docs_url</code> property, if supplied, is a URL pointing to documentation related to the profile data. This URL can lead to additional resources or information about the profile.</li>
 <li class='ui item' >The document MAY contain a <code>version</code> property. If given, holds a string indicating the version of the profile data. This version should follow the semantic versioning (semver) format for version numbering.</li>
 <li class='ui item' >The document MAY contain a <code>tags</code> property. If present, is an array of strings that serve as tags associated with the profile data. These tags can aid in searchability and categorization of the profile. This is useful for indexers. </li></ul></li>
@@ -168,10 +166,6 @@ seamless interactions and enriched service discovery experiences.</p>
           "type": "string",
           "description": "Timestamp indicating profile creation date."
         },
-        "mediaType": {
-          "type": "string",
-          "description": "The media type of the profile content."
-        }, 
         "name": {
           "type": "string",
           "description": "A human-readable name for the profile."
@@ -187,11 +181,6 @@ seamless interactions and enriched service discovery experiences.</p>
         "short_description": {
           "type": "string",
           "description": "A concise description of the profile."
-        },
-        "validity_period": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Combined date-time string indicating the validity period."
         },
         "docs_url": {
           "type": "string",
@@ -235,13 +224,8 @@ seamless interactions and enriched service discovery experiences.</p>
     "profileType": "TrustRegistry",
     "checksum": "abcdef123456",
     "created": "2023-08-18T12:34:56Z",
-    "mediaType": "application/json",
     "description": "An RestfulAPI that describes how an ecosystem based on trust can query and interact with a service to perform a query agasint a trusted regsitry.",
     "short_description": "The open standard trust task protocol defined by the ToIP Foundation to perform the trust task of querying a trust registry.",
-    "validity_period": {
-        "start": "2023-08-18T12:34:56Z",
-        "end" : "2024-08-18T12:34:56Z"
-    },
     "docs_url": "https://trustoverip.org/trustregistryprotocol",
     "version": "2.0.0",
     "tags": ["toip", "trustregistryprotocol"]
