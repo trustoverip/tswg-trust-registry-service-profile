@@ -170,7 +170,7 @@ A profile data model is a document with the following properties:
 
 * The document **MUST** have a `metadata` object with the following properties:
     * The `id` property **MUST** be present and **MUST** be a DID. 
-    * The document**MUST** have a `type` property and the the value of the `type` property **MUST** be, or map to (through interpretation of the @context property), one or more URIs. If more than one URI is provided, the URIs MUST be interpreted as an unordered set. It is RECOMMENDED that each URI in the type be one which, if dereferenced, results in a document containing machine-readable information about the type.
+    * The document **MUST** have a `type` property and the the value of the `type` property **MUST** be, or map to (through interpretation of the @context property), one or more URIs. If more than one URI is provided, the URIs MUST be interpreted as an unordered set. It is RECOMMENDED that each URI in the type be one which, if dereferenced, results in a document containing machine-readable information about the type.
     * The document **MUST** contain a `profileType` property. If present, is a string indicating the specific type or category of the profile. This property can help categorize and classify the profile data further.
     * The document MAY contain a `checksum` property. If present, holds a string value representing a checksum. This checksum can be used to verify the integrity of the profile data, ensuring that it has not been tampered with.
     * The document MAY contain a `created` property, which is an ISO-8601 timestamp indicating the date and time when the profile data was created or initially recorded.
@@ -197,7 +197,7 @@ The Profile Document provides a comprehensive framework for capturing profile-re
           "type": "string",
           "description": "The decentralized identifier representing the profile in the DID format."
         },
-        "profileType": {
+        "type": {
           "type": "string",
           "description": "A string indicating the type of the profile."
         },
