@@ -8,7 +8,7 @@
 **Organization:** Trust Over IP  
 **Editors** // TODO  
 **Chairs:** Andor Kesselman, Darrell o' Donnell, Antti Kettunen  
-**Authors:** // TODO  
+**Authors:** Andor Kesselman  
 **Contributors:** // TODO   
 **Feedback:** [Github Issues](https://github.com/trustoverip/tswg-trust-registry-service-profile/issues)  
 **Related Documents:** [Trust Registry Protocol](https://github.com/darrellodonnell/tswg-trust-registry-tf/tree/main/v2)  
