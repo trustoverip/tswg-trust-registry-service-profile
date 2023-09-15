@@ -151,12 +151,10 @@ A profile data model is a document with the following properties:
     * The document **MUST** contain a `profileType` property. If present, is a string indicating the specific type or category of the profile. This property can help categorize and classify the profile data further.
     * The document MAY contain a `checksum` property. If present, holds a string value representing a checksum. This checksum can be used to verify the integrity of the profile data, ensuring that it has not been tampered with.
     * The document MAY contain a `created` property, which is an ISO-8601 timestamp indicating the date and time when the profile data was created or initially recorded.
-    * The document MAY contain a `mediaType` property, if present, indicates the media type of the content within the profile. This property can specify the format or structure of the profile data content.
     * The document MAY contain a `name` property, if provided, is a human-readable name assigned to the profile. It offers a recognizable label for the profile data.
     * The document MAY contain a `previous` property. If included, refers to a previous CID of the profile data. This reference can facilitate tracking changes and updates to the profile.
     * The document MAY contain a `description` property. if given, offers a detailed textual description of the profile. This description can provide insights into the purpose, content, and usage of the profile data.
     * The document MAY contain a `short_description` property. If available, provides a succinct summary or brief overview of the profile. This summary can be useful for quick references.
-    * The document MAY contain a `validity_period` property. When present, contains a combined date-time string representing the period during which the profile data is considered valid. This property helps manage the temporal validity of the data.
     * The document MAY contain a `docs_url` property, if supplied, is a URL pointing to documentation related to the profile data. This URL can lead to additional resources or information about the profile.
     * The document MAY contain a `version` property. If given, holds a string indicating the version of the profile data. This version should follow the semantic versioning (semver) format for version numbering.
     * The document MAY contain a `tags` property. If present, is an array of strings that serve as tags associated with the profile data. These tags can aid in searchability and categorization of the profile. This is useful for indexers. 
@@ -189,10 +187,6 @@ The Profile Document provides a comprehensive framework for capturing profile-re
           "type": "string",
           "description": "Timestamp indicating profile creation date."
         },
-        "mediaType": {
-          "type": "string",
-          "description": "The media type of the profile content."
-        }, 
         "name": {
           "type": "string",
           "description": "A human-readable name for the profile."
@@ -208,11 +202,6 @@ The Profile Document provides a comprehensive framework for capturing profile-re
         "short_description": {
           "type": "string",
           "description": "A concise description of the profile."
-        },
-        "validity_period": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Combined date-time string indicating the validity period."
         },
         "docs_url": {
           "type": "string",
@@ -260,13 +249,8 @@ The following describes a sample profile document.
     "profileType": "TrustRegistry",
     "checksum": "abcdef123456",
     "created": "2023-08-18T12:34:56Z",
-    "mediaType": "application/json",
     "description": "An RestfulAPI that describes how an ecosystem based on trust can query and interact with a service to perform a query agasint a trusted regsitry.",
     "short_description": "The open standard trust task protocol defined by the ToIP Foundation to perform the trust task of querying a trust registry.",
-    "validity_period": {
-        "start": "2023-08-18T12:34:56Z",
-        "end" : "2024-08-18T12:34:56Z"
-    },
     "docs_url": "https://trustoverip.org/trustregistryprotocol",
     "version": "2.0.0",
     "tags": ["toip", "trustregistryprotocol"]
