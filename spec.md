@@ -149,7 +149,6 @@ A profile data model is a document with the following properties:
     * The `id` property **MUST** be present and **MUST** be a DID. 
     * The document**MUST** have a `type` property and the the value of the `type` property **MUST** be, or map to (through interpretation of the @context property), one or more URIs. If more than one URI is provided, the URIs MUST be interpreted as an unordered set. It is RECOMMENDED that each URI in the type be one which, if dereferenced, results in a document containing machine-readable information about the type.
     * The document **MUST** contain a `profileType` property. If present, is a string indicating the specific type or category of the profile. This property can help categorize and classify the profile data further.
-    * The document MAY contain a `checksum` property. If present, holds a string value representing a checksum. This checksum can be used to verify the integrity of the profile data, ensuring that it has not been tampered with.
     * The document MAY contain a `created` property, which is an ISO-8601 timestamp indicating the date and time when the profile data was created or initially recorded.
     * The document MAY contain a `name` property, if provided, is a human-readable name assigned to the profile. It offers a recognizable label for the profile data.
     * The document MAY contain a `previous` property. If included, refers to a previous CID of the profile data. This reference can facilitate tracking changes and updates to the profile.
@@ -247,7 +246,6 @@ The following describes a sample profile document.
   "metadata": {
     "id": "did:example:123456",
     "profileType": "TrustRegistry",
-    "checksum": "abcdef123456",
     "created": "2023-08-18T12:34:56Z",
     "description": "An RestfulAPI that describes how an ecosystem based on trust can query and interact with a service to perform a query agasint a trusted regsitry.",
     "short_description": "The open standard trust task protocol defined by the ToIP Foundation to perform the trust task of querying a trust registry.",
