@@ -26,8 +26,7 @@ and self-sovereign identity systems. Some of the possible advantages include: </
 <ul class='ui list' >
 <li class='ui item' >service and profile crawlers become possible, enabling better service
 discovery and interoperability across services. </li>
-<li class='ui item' >better descriptive power for individual services</li>
-<li class='ui item' >composibility of capabilities for succinct representation of capabilities.</li>
+<li class='ui item' >better descriptive power for individual services composibility of capabilities for succinct representation of capabilities.</li>
 </ul>
 <h3 class='ui small header'  id="objective">Objective</h3>
 <p>The purpose of this specification is to enhance the ability for an endpoint
@@ -110,9 +109,6 @@ insight into its origins, content, and context. Key attributes encompass the
 decentralized identifier (DID), profile type, creation timestamp, media type,
 version, and descriptive elements that collectively contribute to the profile's
 identity and purpose.</p>
-<p><strong>Service Descriptors:</strong> Here, we will define the capabilities or services linked to the profile
-data, but is not included in this version. By specifying the functionalities that the profile embodies, this section
-clarifies the utility and scope of the profile within the DID ecosystem. </p>
 <p><strong>Proof:</strong> This component encapsulates information related to the authentication and integrity verification of the profile data. Various properties, including the proof type, creation timestamp, proof value, and verification method, work in
 concert to substantiate the authenticity of the profile's content and source.</p>
 <p>Throughout this section, we dissect the schema-driven structure of the profile
@@ -125,7 +121,6 @@ seamless interactions and enriched service discovery experiences.</p>
 <pre><code class="mermaid language-mermaid">graph LR
     subgraph Profile Document
         Metadata[Metadata]
-        Descriptors[Service Descriptors]
         Proofs[Proofs]
     end
 </code></pre>
@@ -259,6 +254,22 @@ seamless interactions and enriched service discovery experiences.</p>
   }
 }
 </code></pre>
+<h3 class='ui small header'  id="futurework">Future Work</h3>
+<p><strong>Service Descriptors and Capability Declarations</strong> We intentionally excluded a
+feature from this specification that we are eager to explore in future versions.
+This pertains to defining the capabilities or services associated with the
+profile data. By outlining the functions embodied by the profile, this section
+provides clarity on the profile's purpose and its role within the DID ecosystem.</p>
+<h3 class='ui small header'  id="references">References</h3>
+<ul class='ui list' >
+<li class='ui item' >Initial Proposal: https://github.com/trustoverip/tswg-trust-registry-tf/discussions/96</li>
+<li class='ui item' >DID Linked Resources :
+https://docs.google.com/presentation/u/0/?usp=slides_web : useful for
+understanding metadata.</li>
+<li class='ui item' >DID Core: https://www.w3.org/TR/did-core/ - Referenced mainly the DID Core spec.</li>
+<li class='ui item' >DIDComm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
+for understanding how to update the service endpoint of the DID Document.</li>
+</ul>
 
 </body>
 </html>
