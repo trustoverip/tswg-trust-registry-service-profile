@@ -35,6 +35,25 @@ context. Developed within the Trust Registry Task Force at Trust Over IP, this
 spec offers a straightforward yet effective discovery layer for both legacy and
 new trust registry services. The intended audience includes individuals or
 entities seeking to improve service interoperability with their existing services or on new services.</p>
+<h3 class='ui small header'  id="example">Example</h3>
+<p>In this example, we illustrate a practical example of profiles. We have a Service that
+complies with the Trust Registry Protocol v2 specification developed by Trust Over IP. 
+This Service exposes an endpoint capable of accommodating multiple profiles. 
+When sharing the Service's DID Document, we also share a Profile object with the endpoint, 
+indicating its support for the Trust Registry Protocol v2 Profile. The client now knows what the service 
+endpoint described supports, and how to interact with that service.</p>
+<pre><code class="mermaid language-mermaid">graph TD
+  subgraph Profiles
+    TRPv2[TRPv2Profile]
+    CustomProfile[CustomProfile]
+  end
+  TRPv2Spec[Trust Registry v2 Specification] --&gt;|is described by| TRPv2
+  TRPService[Service]
+  TRPv2  --&gt;|implements| TRPService
+  TRPService --&gt; |presents profile in DID Document to| Endpoint
+  Endpoint -.-|supports| TRPv2
+  Endpoint -.-|supports| CustomProfile
+</code></pre>
 <h3 class='ui small header'  id="serviceendpointprofilespecification">Service Endpoint Profile Specification</h3>
 <p>The data structure outlined in this specification is designed to establish a
 consistent approach for integrating service endpoint profiles within a DID
@@ -129,12 +148,11 @@ seamless interactions and enriched service discovery experiences.</p>
 <ul class='ui list' >
 <li class='ui item' >The document <strong>MUST</strong> have a <code>metadata</code> object with the following properties:<ul class='ui list' >
 <li class='ui item' >The <code>id</code> property <strong>MUST</strong> be present and <strong>MUST</strong> be a DID. </li>
-<li class='ui item' >The document<strong>MUST</strong> have a <code>type</code> property and the the value of the <code>type</code> property <strong>MUST</strong> be, or map to (through interpretation of the @context property), one or more URIs. If more than one URI is provided, the URIs MUST be interpreted as an unordered set. It is RECOMMENDED that each URI in the type be one which, if dereferenced, results in a document containing machine-readable information about the type.</li>
+<li class='ui item' >The document <strong>MUST</strong> have a <code>type</code> property and the the value of the <code>type</code> property <strong>MUST</strong> be, or map to (through interpretation of the @context property), one or more URIs. If more than one URI is provided, the URIs MUST be interpreted as an unordered set. It is RECOMMENDED that each URI in the type be one which, if dereferenced, results in a document containing machine-readable information about the type.</li>
 <li class='ui item' >The document <strong>MUST</strong> contain a <code>profileType</code> property. If present, is a string indicating the specific type or category of the profile. This property can help categorize and classify the profile data further.</li>
 <li class='ui item' >The document MAY contain a <code>checksum</code> property. If present, holds a string value representing a checksum. This checksum can be used to verify the integrity of the profile data, ensuring that it has not been tampered with.</li>
 <li class='ui item' >The document MAY contain a <code>created</code> property, which is an ISO-8601 timestamp indicating the date and time when the profile data was created or initially recorded.</li>
 <li class='ui item' >The document MAY contain a <code>name</code> property, if provided, is a human-readable name assigned to the profile. It offers a recognizable label for the profile data.</li>
-<li class='ui item' >The document MAY contain a <code>previous</code> property. If included, refers to a previous CID of the profile data. This reference can facilitate tracking changes and updates to the profile.</li>
 <li class='ui item' >The document MAY contain a <code>description</code> property. if given, offers a detailed textual description of the profile. This description can provide insights into the purpose, content, and usage of the profile data.</li>
 <li class='ui item' >The document MAY contain a <code>short_description</code> property. If available, provides a succinct summary or brief overview of the profile. This summary can be useful for quick references.</li>
 <li class='ui item' >The document MAY contain a <code>docs_url</code> property, if supplied, is a URL pointing to documentation related to the profile data. This URL can lead to additional resources or information about the profile.</li>
@@ -154,7 +172,7 @@ seamless interactions and enriched service discovery experiences.</p>
           "type": "string",
           "description": "The decentralized identifier representing the profile in the DID format."
         },
-        "profileType": {
+        "type": {
           "type": "string",
           "description": "A string indicating the type of the profile."
         },
