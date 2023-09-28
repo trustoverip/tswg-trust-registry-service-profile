@@ -1,16 +1,17 @@
 ## Discovery: Additional Service Discovery Using Profile Definitions on a DID Document
 
-**Specification Status:** Pre-Draft 0.0.1  
+**Status:** Pre-Draft 0.0.1  
 **Latest Draft**:   
 **Previous Draft:**  
-
-### Editors
-
-// TODO: figure this out.
-
-### Contributors
-
-// TODO
+**History:** [Commit History](https://github.com/trustoverip/tswg-trust-registry-service-profile)  
+**Task Force:** Trust Registry Task Force  
+**Organization:** Trust Over IP  
+**Editors** // TODO  
+**Chairs:** Andor Kesselman, Darrell o' Donnell, Antti Kettunen  
+**Authors:** Andor Kesselman  
+**Contributors:** // TODO   
+**Feedback:** [Github Issues](https://github.com/trustoverip/tswg-trust-registry-service-profile/issues)  
+**Related Documents:** [Trust Registry Protocol](https://github.com/darrellodonnell/tswg-trust-registry-tf/tree/main/v2)  
 
 ### Introduction
 
