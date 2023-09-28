@@ -150,7 +150,6 @@ seamless interactions and enriched service discovery experiences.</p>
 <li class='ui item' >The <code>id</code> property <strong>MUST</strong> be present and <strong>MUST</strong> be a DID. </li>
 <li class='ui item' >The document <strong>MUST</strong> have a <code>type</code> property and the the value of the <code>type</code> property <strong>MUST</strong> be, or map to (through interpretation of the @context property), one or more URIs. If more than one URI is provided, the URIs MUST be interpreted as an unordered set. It is RECOMMENDED that each URI in the type be one which, if dereferenced, results in a document containing machine-readable information about the type.</li>
 <li class='ui item' >The document <strong>MUST</strong> contain a <code>profileType</code> property. If present, is a string indicating the specific type or category of the profile. This property can help categorize and classify the profile data further.</li>
-<li class='ui item' >The document MAY contain a <code>checksum</code> property. If present, holds a string value representing a checksum. This checksum can be used to verify the integrity of the profile data, ensuring that it has not been tampered with.</li>
 <li class='ui item' >The document MAY contain a <code>created</code> property, which is an ISO-8601 timestamp indicating the date and time when the profile data was created or initially recorded.</li>
 <li class='ui item' >The document MAY contain a <code>name</code> property, if provided, is a human-readable name assigned to the profile. It offers a recognizable label for the profile data.</li>
 <li class='ui item' >The document MAY contain a <code>description</code> property. if given, offers a detailed textual description of the profile. This description can provide insights into the purpose, content, and usage of the profile data.</li>
@@ -240,7 +239,6 @@ seamless interactions and enriched service discovery experiences.</p>
   "metadata": {
     "id": "did:example:123456",
     "profileType": "TrustRegistry",
-    "checksum": "abcdef123456",
     "created": "2023-08-18T12:34:56Z",
     "description": "An RestfulAPI that describes how an ecosystem based on trust can query and interact with a service to perform a query agasint a trusted regsitry.",
     "short_description": "The open standard trust task protocol defined by the ToIP Foundation to perform the trust task of querying a trust registry.",
