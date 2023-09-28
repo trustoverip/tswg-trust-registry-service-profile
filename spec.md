@@ -33,6 +33,29 @@ spec offers a straightforward yet effective discovery layer for both legacy and
 new trust registry services. The intended audience includes individuals or
 entities seeking to improve service interoperability with their existing services or on new services.
 
+### Example
+
+In this example, we illustrate a practical example of profiles. We have a Service that
+complies with the Trust Registry Protocol v2 specification developed by Trust Over IP. 
+This Service exposes an endpoint capable of accommodating multiple profiles. 
+When sharing the Service's DID Document, we also share a Profile object with the endpoint, 
+indicating its support for the Trust Registry Protocol v2 Profile. The client now knows what the service 
+endpoint described supports, and how to interact with that service.
+
+```mermaid
+graph TD
+  subgraph Profiles
+    TRPv2[TRPv2Profile]
+    CustomProfile[CustomProfile]
+  end
+  TRPv2Spec[Trust Registry v2 Specification] -->|is described by| TRPv2
+  TRPService[Service]
+  TRPv2  -->|implements| TRPService
+  TRPService --> |presents profile in DID Document to| Endpoint
+  Endpoint -.-|supports| TRPv2
+  Endpoint -.-|supports| CustomProfile
+```
+
 ### Service Endpoint Profile Specification
 
 The data structure outlined in this specification is designed to establish a
@@ -147,12 +170,11 @@ A profile data model is a document with the following properties:
 
 * The document **MUST** have a `metadata` object with the following properties:
     * The `id` property **MUST** be present and **MUST** be a DID. 
-    * The document**MUST** have a `type` property and the the value of the `type` property **MUST** be, or map to (through interpretation of the @context property), one or more URIs. If more than one URI is provided, the URIs MUST be interpreted as an unordered set. It is RECOMMENDED that each URI in the type be one which, if dereferenced, results in a document containing machine-readable information about the type.
+    * The document **MUST** have a `type` property and the the value of the `type` property **MUST** be, or map to (through interpretation of the @context property), one or more URIs. If more than one URI is provided, the URIs MUST be interpreted as an unordered set. It is RECOMMENDED that each URI in the type be one which, if dereferenced, results in a document containing machine-readable information about the type.
     * The document **MUST** contain a `profileType` property. If present, is a string indicating the specific type or category of the profile. This property can help categorize and classify the profile data further.
     * The document MAY contain a `checksum` property. If present, holds a string value representing a checksum. This checksum can be used to verify the integrity of the profile data, ensuring that it has not been tampered with.
     * The document MAY contain a `created` property, which is an ISO-8601 timestamp indicating the date and time when the profile data was created or initially recorded.
     * The document MAY contain a `name` property, if provided, is a human-readable name assigned to the profile. It offers a recognizable label for the profile data.
-    * The document MAY contain a `previous` property. If included, refers to a previous CID of the profile data. This reference can facilitate tracking changes and updates to the profile.
     * The document MAY contain a `description` property. if given, offers a detailed textual description of the profile. This description can provide insights into the purpose, content, and usage of the profile data.
     * The document MAY contain a `short_description` property. If available, provides a succinct summary or brief overview of the profile. This summary can be useful for quick references.
     * The document MAY contain a `docs_url` property, if supplied, is a URL pointing to documentation related to the profile data. This URL can lead to additional resources or information about the profile.
@@ -175,7 +197,7 @@ The Profile Document provides a comprehensive framework for capturing profile-re
           "type": "string",
           "description": "The decentralized identifier representing the profile in the DID format."
         },
-        "profileType": {
+        "type": {
           "type": "string",
           "description": "A string indicating the type of the profile."
         },
