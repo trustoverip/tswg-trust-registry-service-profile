@@ -48,7 +48,7 @@ graph TD
     TRPv2[TRPv2Profile]
     CustomProfile[CustomProfile]
   end
-  TRPv2Spec[Trust Registry Profile] -->|describes| TRPv2
+  TRPv2Spec[Trust Registry v2 Specification] -->|is described by| TRPv2
   TRPService[Service]
   TRPv2  -->|implements| TRPService
   TRPService --> |presents profile in DID Document to| Endpoint
