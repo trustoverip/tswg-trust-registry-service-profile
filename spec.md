@@ -70,6 +70,7 @@ document. Adherence to the subsequent guidelines is mandatory:
     - `profile`: A JSON Profile document that can be resolved through HTTPS. Further requisites are detailed in the "Profile Document" section.
     - `definition`: If provided, this signifies the resolvable URI attribute
       enmeshed within the DID document. The corresponding definition is required to comply with the specifications delineated in the subsequent profile document section.
+    - An `checksum` MAY be added as an aid in integrity protection and verification of the Profile document.
 
 An array of structs is not valid.
 
@@ -89,7 +90,8 @@ This following is an portion from the DID Document.
     "type": "TrustRegistry", 
     "serviceEndpoint": {
         "profile": "https://trustoverip.org/profiles/trp/v2",
-        "uri": "https://my-tr-service/"
+        "uri": "https://my-tr-service/",
+        "checksum: "ec54f8019b869d5511b42678ea859b9dc185f487bf1776cb079fda0930331689",
     }
   }]
 }
@@ -284,7 +286,6 @@ The following describes a sample profile document.
   }
 }
 ```
-
 
 ### Future Work
 
