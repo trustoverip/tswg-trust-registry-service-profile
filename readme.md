@@ -1,45 +1,8 @@
-# Trust over IP Specification Template
+# ToIP Service Profile Specification
 
-A base template.
+This specification outlines the structure and requirements for enabling additional service discovery through profile definitions within a Decentralized Identifier (DID) document. By integrating service endpoints and profile information, this approach enhances the capabilities of DIDs for decentralized and self-sovereign identity systems. Some of the possible advantages include:
 
-### How to use this template
+- service and profile crawlers become possible, enabling better service discovery and interoperability across services.
+- better descriptive power for individual services composibility of capabilities for succinct representation of capabilities.
 
-The contents of this template can be used to create a ToIP specification.
-
-### Getting Started
-
-You need a [GitHub](https://github.com) account.
-
-When creating a new specification, you can select 'trustoverip/toip-spec-template' from the Repository template list.
-
-#### Set up GitHub pages
-
-1. Under your repository name, click  Settings.
-2. In the "Code and automation" section of the sidebar, click  Pages.
-3. Under "GitHub Pages", use the drop-down menu and select 'main' as the publishing source.
-4. Use the drop-down menu to select '/docs' for your publishing source.
-5. Click save
-
-### Editing
-
-1. Edit the [specification](spec.md) using markdown.
-2. Commit and push your changes
-
-A HTML version of the spec is automatically generated and available at https://trustoverip.github.io/your-spec-name
-
-
-#### Previewing locally
-
-This requires [node.js](https://nodejs.dev) to be installed.
-
-Install development dependencies:
-
-```shell
-npm install
-```
-
-To generate and preview the specification run:
-
-```shell
-npm run preview
-```
+The specification can be found [here](./spec.md).
