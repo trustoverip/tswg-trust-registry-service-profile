@@ -1,4 +1,4 @@
-## Discovery: Additional Service Discovery Using Profile Definitions on a DID Document
+## ToIP Service Profile Specification
 
 **Status:** Pre-Draft 0.0.1  
 **Latest Draft**:   
