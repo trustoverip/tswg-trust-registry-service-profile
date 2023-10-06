@@ -6,7 +6,7 @@
 **History:** [Commit History](https://github.com/trustoverip/tswg-trust-registry-service-profile)  
 **Task Force:** Trust Registry Task Force  
 **Organization:** Trust Over IP  
-**Editors**  Andor Kesselman, Sam Curren
+**Editors**  Andor Kesselman, Sam Curren  
 **Chairs:** Andor Kesselman, Darrell o' Donnell, Antti Kettunen  
 **Contributors:** Darrel o' Donnell, Antti Kettunen, Sankarshan Mukhopadhyay, Dan Bachenheimer, Mathieu Glaude, Drummund Reed, Alex Tweeddale, Tim Bouma  
 **Feedback:** [Github Issues](https://github.com/trustoverip/tswg-trust-registry-service-profile/issues)  
