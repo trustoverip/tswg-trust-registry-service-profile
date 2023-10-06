@@ -8,8 +8,7 @@
 **Organization:** Trust Over IP  
 **Editors**  Andor Kesselman, Sam Curren
 **Chairs:** Andor Kesselman, Darrell o' Donnell, Antti Kettunen  
-**Contributors:** Darrel o' Donnell, Antti Kettunen, Sankarshan Mukhopadhyay, Dan Bachenheimer, Mathieu Glaude, Drummund Reed, Alex Tweeddale
-**Contributors:** // TODO   
+**Contributors:** Darrel o' Donnell, Antti Kettunen, Sankarshan Mukhopadhyay, Dan Bachenheimer, Mathieu Glaude, Drummund Reed, Alex Tweeddale, Tim Bouma
 **Feedback:** [Github Issues](https://github.com/trustoverip/tswg-trust-registry-service-profile/issues)  
 **Related Documents:** [Trust Registry Protocol](https://github.com/darrellodonnell/tswg-trust-registry-tf/tree/main/v2)  
 
