@@ -70,7 +70,7 @@ document. Adherence to the subsequent guidelines is mandatory:
     - `profile`: A JSON Profile document that can be resolved through HTTPS. Further requisites are detailed in the "Profile Document" section.
     - `definition`: If provided, this signifies the resolvable URI attribute
       enmeshed within the DID document. The corresponding definition is required to comply with the specifications delineated in the subsequent profile document section.
-    - An `checksum` MAY be added as an aid in integrity protection and verification of the Profile document.
+    - An `integrity` property MAY be added as an aid in integrity protection and verification of the Profile document. It MUST be in the format of a subresource integrity field (SRI) as defined by [REC-SRI-20160623]([REC-SRI-20160623](https://www.w3.org/TR/2016/REC-SRI-20160623/). 
 
 An array of structs is not valid.
 
@@ -91,7 +91,7 @@ This following is an portion from the DID Document.
     "serviceEndpoint": {
         "profile": "https://trustoverip.org/profiles/trp/v2",
         "uri": "https://my-tr-service/",
-        "checksum: "ec54f8019b869d5511b42678ea859b9dc185f487bf1776cb079fda0930331689",
+        "integrity: "sha384-Li9vy3DqF8tnTXuiaAJuML3ky+er10rcgNR/VqsVpcw+ThHmYcwiB1pbOxEbzJr7",
     }
   }]
 }
@@ -304,3 +304,4 @@ provides clarity on the profile's purpose and its role within the DID ecosystem.
 - DID Core: https://www.w3.org/TR/did-core/ - Referenced mainly the DID Core spec.
 - DIDComm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
   for understanding how to update the service endpoint of the DID Document.
+- [Subresource Integrity](https://www.w3.org/TR/SRI/)
