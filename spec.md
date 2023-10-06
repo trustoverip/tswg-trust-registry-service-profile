@@ -284,7 +284,20 @@ The following describes a sample profile document.
   }
 }
 ```
+### Security Considerations
 
+This section describe a non-normative, non-exhaustive list of security considerations. 
+
+#### Cryptography Suites and Libraries
+_This section is non-normative._
+
+Some aspects of the profile model described in this specification can be protected through the use of cryptography. It is important for implementers to understand the cryptography suites and libraries used to create and process credentials and presentations. Implementing and auditing cryptography systems generally requires substantial experience. Effective red teaming can also help remove bias from security reviews.
+
+#### Unsigned Profile Documents
+
+_This section is non-normative._
+
+This specification allows profiles to be produced that do not contain signatures or proofs of any kind. These types of profiles are often useful for cases where users may not have the ability to take advantage of the cryptographic proof mechanisms. Endpoint systems should be aware that these types of profiles are not verifiable because the authorship either is not known or cannot be trusted.
 
 ### Future Work
 
