@@ -12,6 +12,8 @@
 **Feedback:** [Github Issues](https://github.com/trustoverip/tswg-trust-registry-service-profile/issues)  
 **Related Documents:** [Trust Registry Protocol](https://github.com/darrellodonnell/tswg-trust-registry-tf/tree/main/v2)  
 
+**Status Description**: This document is a preliminary draft and should not be regarded as a finalized version. It is subject to ongoing revisions and modifications, and its content may change significantly before reaching a final form. Please note that the information presented herein is not binding and is provided for reference and discussion purposes only. Your feedback and input are essential in shaping the final version of this document. We intend to add additional supporting material before the specification is finalized. 
+
 ### Introduction
 
 This specification outlines the structure and requirements for enabling
