@@ -307,7 +307,7 @@ This pertains to defining the capabilities or services associated with the
 profile data. By outlining the functions embodied by the profile, this section
 provides clarity on the profile's purpose and its role within the DID ecosystem.
 
-### References
+### References and Acknowledgements 
 
 - Initial Proposal: https://github.com/trustoverip/tswg-trust-registry-tf/discussions/96
 - DID Linked Resources :
@@ -316,4 +316,4 @@ provides clarity on the profile's purpose and its role within the DID ecosystem.
 - DID Core: https://www.w3.org/TR/did-core/ - Referenced mainly the DID Core spec.
 - DIDComm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
   for understanding how to update the service endpoint of the DID Document.
-- https://www.w3.org/TR/vc-data-model/
+- https://www.w3.org/TR/vc-data-model/ : For the securtiy considerations and guidance on the profile document structure. 
