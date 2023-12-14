@@ -70,7 +70,7 @@ document. Adherence to the subsequent guidelines is mandatory:
     - `profile`: A JSON Profile document that can be resolved through HTTPS. Further requisites are detailed in the "Profile Document" section.
     - `definition`: If provided, this signifies the resolvable URI attribute
       enmeshed within the DID document. The corresponding definition is required to comply with the specifications delineated in the subsequent profile document section.
-    - An `integrity` property MAY be added as an aid in integrity protection and verification of the Profile document. It MUST be in the format of a  MultiHash, `<hash-func-type><digest-length><digest-value>`, as defined here [Multiformat]([https://multiformats.io/multihash/]). 
+    - An `integrity` property MAY be added as an aid in integrity protection and verification of the Profile document. It MUST be in the format of a  MultiHash, `<hash-func-type><digest-length><digest-value>` encoded as a varint and defined here [Multiformat](https://multiformats.io/multihash/). 
 
 An array of structs is not valid.
 
