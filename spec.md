@@ -70,7 +70,7 @@ document. Adherence to the subsequent guidelines is mandatory:
     - `profile`: A JSON Profile document that can be resolved through HTTPS. Further requisites are detailed in the "Profile Document" section.
     - `definition`: If provided, this signifies the resolvable URI attribute
       enmeshed within the DID document. The corresponding definition is required to comply with the specifications delineated in the subsequent profile document section.
-    - An `integrity` property MAY be added as an aid in integrity protection and verification of the Profile document. It MUST be in the format of a subresource integrity field (SRI) as defined by [REC-SRI-20160623]([REC-SRI-20160623](https://www.w3.org/TR/2016/REC-SRI-20160623/). 
+    - An `integrity` property MAY be added as an aid in integrity protection and verification of the Profile document. It MUST be in the format of a  MultiHash, `<hash-func-type><digest-length><digest-value>`, as defined here [Multiformat]([https://multiformats.io/multihash/]). 
 
 An array of structs is not valid.
 
@@ -91,7 +91,7 @@ This following is an portion from the DID Document.
     "serviceEndpoint": {
         "profile": "https://trustoverip.org/profiles/trp/v2",
         "uri": "https://my-tr-service/",
-        "integrity: "sha384-Li9vy3DqF8tnTXuiaAJuML3ky+er10rcgNR/VqsVpcw+ThHmYcwiB1pbOxEbzJr7",
+        "integrity: "122041dd7b6443542e75701aa98a0c235951a28a0d851b11564d20022ab11d2589a8",
     }
   }]
 }
