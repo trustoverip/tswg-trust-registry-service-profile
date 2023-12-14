@@ -70,7 +70,8 @@ document. Adherence to the subsequent guidelines is mandatory:</p>
 <li class='ui item' >A choice between the ensuing options:<ul class='ui list' >
 <li class='ui item' ><code>profile</code>: A JSON Profile document that can be resolved through HTTPS. Further requisites are detailed in the "Profile Document" section.</li>
 <li class='ui item' ><code>definition</code>: If provided, this signifies the resolvable URI attribute
-enmeshed within the DID document. The corresponding definition is required to comply with the specifications delineated in the subsequent profile document section.</li></ul></li>
+enmeshed within the DID document. The corresponding definition is required to comply with the specifications delineated in the subsequent profile document section.</li>
+<li class='ui item' >An <code>integrity</code> property MAY be added as an aid in integrity protection and verification of the Profile document. It MUST be in the format of a  MultiHash, <code>&lt;hash-func-type&gt;&lt;digest-length&gt;&lt;digest-value&gt;</code> encoded as a varint and defined here <a href="https://multiformats.io/multihash/">Multiformat</a>. </li></ul></li>
 </ul>
 <p>An array of structs is not valid.</p>
 <p><strong>Example</strong></p>
@@ -86,7 +87,8 @@ enmeshed within the DID document. The corresponding definition is required to co
     "type": "TrustRegistry", 
     "serviceEndpoint": {
         "profile": "https://trustoverip.org/profiles/trp/v2",
-        "uri": "https://my-tr-service/"
+        "uri": "https://my-tr-service/",
+        "integrity: "122041dd7b6443542e75701aa98a0c235951a28a0d851b11564d20022ab11d2589a8",
     }
   }]
 }
@@ -282,6 +284,7 @@ understanding metadata.</li>
 <li class='ui item' >DID Core: https://www.w3.org/TR/did-core/ - Referenced mainly the DID Core spec.</li>
 <li class='ui item' >DIDComm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
 for understanding how to update the service endpoint of the DID Document.</li>
+<li class='ui item' ><a href="https://multiformats.io/multihash/">MultiHash</a>: Used for integrity field.</li>
 <li class='ui item' >https://www.w3.org/TR/vc-data-model/ : For the securtiy considerations and guidance on the profile document structure. </li>
 </ul>
 
