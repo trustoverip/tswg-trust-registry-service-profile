@@ -304,4 +304,4 @@ provides clarity on the profile's purpose and its role within the DID ecosystem.
 - DID Core: https://www.w3.org/TR/did-core/ - Referenced mainly the DID Core spec.
 - DIDComm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
   for understanding how to update the service endpoint of the DID Document.
-- [Subresource Integrity](https://www.w3.org/TR/SRI/)
+- [MultiHash](https://multiformats.io/multihash/): Used for integrity field.
