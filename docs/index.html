@@ -9,19 +9,19 @@
 
 <body>
 
-<h2 class='ui medium header'  id="discoveryadditionalservicediscoveryusingprofiledefinitionsonadiddocument">Discovery: Additional Service Discovery Using Profile Definitions on a DID Document</h2>
+<h2 class='ui medium header'  id="toipserviceprofilespecification">ToIP Service Profile Specification</h2>
 <p><strong>Status:</strong> Pre-Draft 0.0.1<br />
 <strong>Latest Draft</strong>:<br />
 <strong>Previous Draft:</strong><br />
 <strong>History:</strong> <a href="https://github.com/trustoverip/tswg-trust-registry-service-profile">Commit History</a><br />
 <strong>Task Force:</strong> Trust Registry Task Force<br />
 <strong>Organization:</strong> Trust Over IP<br />
-<strong>Editors</strong> // TODO<br />
+<strong>Editors</strong>  Andor Kesselman, Sam Curren
 <strong>Chairs:</strong> Andor Kesselman, Darrell o' Donnell, Antti Kettunen<br />
-<strong>Authors:</strong> Andor Kesselman<br />
-<strong>Contributors:</strong> // TODO<br />
+<strong>Contributors:</strong> Darrel o' Donnell, Antti Kettunen, Sankarshan Mukhopadhyay, Dan Bachenheimer, Mathieu Glaude, Drummund Reed, Alex Tweeddale, Tim Bouma
 <strong>Feedback:</strong> <a href="https://github.com/trustoverip/tswg-trust-registry-service-profile/issues">Github Issues</a><br />
 <strong>Related Documents:</strong> <a href="https://github.com/darrellodonnell/tswg-trust-registry-tf/tree/main/v2">Trust Registry Protocol</a>  </p>
+<p><strong>Status Description</strong>: This document is a preliminary draft and should not be regarded as a finalized version. It is subject to ongoing revisions and modifications, and its content may change significantly before reaching a final form. Please note that the information presented herein is not binding and is provided for reference and discussion purposes only. Your feedback and input are essential in shaping the final version of this document. We intend to add additional supporting material before the specification is finalized. </p>
 <h3 class='ui small header'  id="introduction">Introduction</h3>
 <p>This specification outlines the structure and requirements for enabling
 additional service discovery through profile definitions within a Decentralized
@@ -259,13 +259,21 @@ seamless interactions and enriched service discovery experiences.</p>
   }
 }
 </code></pre>
+<h3 class='ui small header'  id="securityconsiderations">Security Considerations</h3>
+<p>This section describe a non-normative, non-exhaustive list of security considerations. </p>
+<h4 class='ui smallest header'  id="cryptographysuitesandlibraries">Cryptography Suites and Libraries</h4>
+<p><em>This section is non-normative.</em></p>
+<p>Some aspects of the profile model described in this specification can be protected through the use of cryptography. It is important for implementers to understand the cryptography suites and libraries used to create and process credentials and presentations. Implementing and auditing cryptography systems generally requires substantial experience. Effective red teaming can also help remove bias from security reviews.</p>
+<h4 class='ui smallest header'  id="unsignedprofiledocuments">Unsigned Profile Documents</h4>
+<p><em>This section is non-normative.</em></p>
+<p>This specification allows profiles to be produced that do not contain signatures or proofs of any kind. These types of profiles are often useful for cases where users may not have the ability to take advantage of the cryptographic proof mechanisms. Endpoint systems should be aware that these types of profiles are not verifiable because the authorship either is not known or cannot be trusted.</p>
 <h3 class='ui small header'  id="futurework">Future Work</h3>
 <p><strong>Service Descriptors and Capability Declarations</strong> We intentionally excluded a
 feature from this specification that we are eager to explore in future versions.
 This pertains to defining the capabilities or services associated with the
 profile data. By outlining the functions embodied by the profile, this section
 provides clarity on the profile's purpose and its role within the DID ecosystem.</p>
-<h3 class='ui small header'  id="references">References</h3>
+<h3 class='ui small header'  id="referencesandacknowledgements">References and Acknowledgements</h3>
 <ul class='ui list' >
 <li class='ui item' >Initial Proposal: https://github.com/trustoverip/tswg-trust-registry-tf/discussions/96</li>
 <li class='ui item' >DID Linked Resources :
@@ -274,6 +282,7 @@ understanding metadata.</li>
 <li class='ui item' >DID Core: https://www.w3.org/TR/did-core/ - Referenced mainly the DID Core spec.</li>
 <li class='ui item' >DIDComm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
 for understanding how to update the service endpoint of the DID Document.</li>
+<li class='ui item' >https://www.w3.org/TR/vc-data-model/ : For the securtiy considerations and guidance on the profile document structure. </li>
 </ul>
 
 </body>

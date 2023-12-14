@@ -1,4 +1,4 @@
-## Discovery: Additional Service Discovery Using Profile Definitions on a DID Document
+## ToIP Service Profile Specification
 
 **Status:** Pre-Draft 0.0.1  
 **Latest Draft**:   
@@ -6,12 +6,13 @@
 **History:** [Commit History](https://github.com/trustoverip/tswg-trust-registry-service-profile)  
 **Task Force:** Trust Registry Task Force  
 **Organization:** Trust Over IP  
-**Editors** // TODO  
+**Editors**  Andor Kesselman, Sam Curren
 **Chairs:** Andor Kesselman, Darrell o' Donnell, Antti Kettunen  
-**Authors:** Andor Kesselman  
-**Contributors:** // TODO   
+**Contributors:** Darrel o' Donnell, Antti Kettunen, Sankarshan Mukhopadhyay, Dan Bachenheimer, Mathieu Glaude, Drummund Reed, Alex Tweeddale, Tim Bouma
 **Feedback:** [Github Issues](https://github.com/trustoverip/tswg-trust-registry-service-profile/issues)  
 **Related Documents:** [Trust Registry Protocol](https://github.com/darrellodonnell/tswg-trust-registry-tf/tree/main/v2)  
+
+**Status Description**: This document is a preliminary draft and should not be regarded as a finalized version. It is subject to ongoing revisions and modifications, and its content may change significantly before reaching a final form. Please note that the information presented herein is not binding and is provided for reference and discussion purposes only. Your feedback and input are essential in shaping the final version of this document. We intend to add additional supporting material before the specification is finalized. 
 
 ### Introduction
 
@@ -286,6 +287,20 @@ The following describes a sample profile document.
   }
 }
 ```
+### Security Considerations
+
+This section describe a non-normative, non-exhaustive list of security considerations. 
+
+#### Cryptography Suites and Libraries
+_This section is non-normative._
+
+Some aspects of the profile model described in this specification can be protected through the use of cryptography. It is important for implementers to understand the cryptography suites and libraries used to create and process credentials and presentations. Implementing and auditing cryptography systems generally requires substantial experience. Effective red teaming can also help remove bias from security reviews.
+
+#### Unsigned Profile Documents
+
+_This section is non-normative._
+
+This specification allows profiles to be produced that do not contain signatures or proofs of any kind. These types of profiles are often useful for cases where users may not have the ability to take advantage of the cryptographic proof mechanisms. Endpoint systems should be aware that these types of profiles are not verifiable because the authorship either is not known or cannot be trusted.
 
 ### Future Work
 
@@ -295,7 +310,7 @@ This pertains to defining the capabilities or services associated with the
 profile data. By outlining the functions embodied by the profile, this section
 provides clarity on the profile's purpose and its role within the DID ecosystem.
 
-### References
+### References and Acknowledgements 
 
 - Initial Proposal: https://github.com/trustoverip/tswg-trust-registry-tf/discussions/96
 - DID Linked Resources :
@@ -305,3 +320,4 @@ provides clarity on the profile's purpose and its role within the DID ecosystem.
 - DIDComm Messaging:  https://identity.foundation/didcomm-messaging/spec/ - used
   for understanding how to update the service endpoint of the DID Document.
 - [MultiHash](https://multiformats.io/multihash/): Used for integrity field.
+- https://www.w3.org/TR/vc-data-model/ : For the securtiy considerations and guidance on the profile document structure. 
