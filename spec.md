@@ -160,6 +160,7 @@ stakeholders can harness the power of interoperable profiles to facilitate
 seamless interactions and enriched service discovery experiences.
 
 **Profile Document Data Model**
+
 ```mermaid
 graph LR
     subgraph Profile Document
@@ -183,7 +184,8 @@ A profile data model is a document with the following properties:
     * The document MAY contain a `docs_url` property, if supplied, is a URL pointing to documentation related to the profile data. This URL can lead to additional resources or information about the profile.
     * The document MAY contain a `version` property. If given, holds a string indicating the version of the profile data. This version should follow the semantic versioning (semver) format for version numbering.
     * The document MAY contain a `tags` property. If present, is an array of strings that serve as tags associated with the profile data. These tags can aid in searchability and categorization of the profile. This is useful for indexers. 
-      
+    * The document MAY contain a `transport` property. If present, it is an array of strings to specify the available transports to interact with the service.
+
 #### JSON Schema
 
 The Profile Document provides a comprehensive framework for capturing profile-related information within the DID document.
@@ -241,7 +243,13 @@ The Profile Document provides a comprehensive framework for capturing profile-re
           "type": "array",
           "items": { "type": "string" },
           "description": "Tags associated with the profile data."
+        },
+        "transports": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Transports associated with service."
         }
+
       },
       "required": [
         "id"
@@ -274,6 +282,7 @@ The following describes a sample profile document.
     "profileType": "TrustRegistry",
     "created": "2023-08-18T12:34:56Z",
     "description": "An RestfulAPI that describes how an ecosystem based on trust can query and interact with a service to perform a query agasint a trusted regsitry.",
+    "transport": []
     "short_description": "The open standard trust task protocol defined by the ToIP Foundation to perform the trust task of querying a trust registry.",
     "docs_url": "https://trustoverip.org/trustregistryprotocol",
     "version": "2.0.0",
