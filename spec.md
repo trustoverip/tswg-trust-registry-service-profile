@@ -173,7 +173,8 @@ graph LR
 A profile data model is a document with the following properties:
 
 * The document **MUST** have a `metadata` object with the following properties:
-    * The `id` property **MUST** be present and **MUST** be a DID. 
+    * The `id` property **MUST** be present. It must represent a unique indentifier within a governance framework.
+    * The `owner` property **MAY** be present. It **MUST** represent a DID of the owner of the document if present. 
     * The document **MUST** have a `type` property and the the value of the `type` property **MUST** be, or map to (through interpretation of the @context property), one or more URIs. If more than one URI is provided, the URIs MUST be interpreted as an unordered set. It is RECOMMENDED that each URI in the type be one which, if dereferenced, results in a document containing machine-readable information about the type.
     * The document **MUST** contain a `profileType` property. If present, is a string indicating the specific type or category of the profile. This property can help categorize and classify the profile data further.
     * The document MAY contain a `created` property, which is an ISO-8601 timestamp indicating the date and time when the profile data was created or initially recorded.
@@ -198,7 +199,11 @@ The Profile Document provides a comprehensive framework for capturing profile-re
       "properties": {
         "id": {
           "type": "string",
-          "description": "The decentralized identifier representing the profile in the DID format."
+          "description": "The unique identifier of the profile document within a governance framework."
+        },
+        "owner": {
+          "type": "string",
+          "description": "The owner of the profile document"
         },
         "type": {
           "type": "string",
@@ -270,7 +275,8 @@ The following describes a sample profile document.
 ```json
 {
   "metadata": {
-    "id": "did:example:123456",
+    "id": "adsfsadfasdf",
+    "owner": "did:example:123456",
     "profileType": "TrustRegistry",
     "created": "2023-08-18T12:34:56Z",
     "description": "An RestfulAPI that describes how an ecosystem based on trust can query and interact with a service to perform a query agasint a trusted regsitry.",
