@@ -26,23 +26,67 @@ and self-sovereign identity systems. Some of the possible advantages include:
 discovery and interoperability across services. 
 - better descriptive power for individual services composibility of capabilities for succinct representation of capabilities.
 
+### Overview
+
+A service profile is a pointer within a DID Document to a _resuable_ static
+document resolvable by HTTP that describes the capabilities of a service. 
+
+```mermaid
+classDiagram
+  class Service {
+      url: string
+      profile: string
+      integrity: string 
+  }
+  class DIDDocument {
+    services: Service[]
+  }
+  class ServiceProfileMetadata {
+      id: string
+      profileType: string
+      created: string
+      description: string
+      short_description: string
+      docs_url: string
+      version: string
+      tags: string[]
+  }
+  class Proof {
+    type: string 
+    created: string
+    proofValue: string
+    verificationMethod: string
+  }
+  class ServiceProfile {
+      metadata: Metadata
+      proof: Proof
+  }
+  ServiceProfileMetadata "1" ..|> "1" ServiceProfile : contains
+  Proof "1" ..|> "1" ServiceProfile : contains
+  DIDDocument "1" .. "many" Service : contains
+  DIDDocument "many" ..|> "1" ServiceProfile :  points to
+```
+
 ### Objective
 
 The purpose of this specification is to enhance the ability for an endpoint
 system and user to discover capabilities of a service within a decentralized
-context. Developed within the Trust Registry Task Force at Trust Over IP, this
-spec offers a straightforward yet effective discovery layer for both legacy and
-new trust registry services. The intended audience includes individuals or
-entities seeking to improve service interoperability with their existing services or on new services.
+context. Developed initially within the Trust Registry Task Force at Trust Over
+IP to enable better protocol discovery, this spec offers a straightforward yet
+effective discovery layer for both legacy and new trust registry services. The
+intended audience includes individuals or entities seeking to improve service
+interoperability with their existing services or on new services.
 
 ### Example
 
-In this example, we illustrate a practical example of profiles. We have a Service that
-complies with the Trust Registry Protocol v2 specification developed by Trust Over IP. 
-This Service exposes an endpoint capable of accommodating multiple profiles. 
-When sharing the Service's DID Document, we also share a Profile object with the endpoint, 
-indicating its support for the Trust Registry Protocol v2 Profile. The client now knows what the service 
+In this example, we illustrate a practical example of profiles. We have a
+Service that complies with the Trust Registry Protocol v2 specification
+developed by Trust Over IP. This Service exposes an endpoint capable of
+accommodating multiple profiles. When sharing the Service's DID Document, we
+also share a Profile object with the endpoint, indicating its support for the
+Trust Registry Protocol v2 Profile. The client now knows what the service
 endpoint described supports, and how to interact with that service.
+
 
 ```mermaid
 graph TD
@@ -59,6 +103,8 @@ graph TD
 ```
 
 ### Service Endpoint Profile Specification
+
+_this section is normative_
 
 The data structure outlined in this specification is designed to establish a
 consistent approach for integrating service endpoint profiles within a DID
@@ -130,6 +176,8 @@ This following is an portion from the DID Document.
 ### Profile Document Specification
 
 #### Profile Data Model
+
+_this section is normative_
 
 The profile data model is heavily inspired by the VC Data Model.
 
