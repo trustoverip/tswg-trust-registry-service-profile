@@ -88,6 +88,10 @@ protocol or service using a structured Profile Document Model. These documents
 are reusable, decentralized, and expressive documents that allow service
 providers to connect and interoperate with endpoint systems with less friction.
 
+### Problem Statement
+
+Current endpoint systems lack a clear method to identify the protocols a service supports. The DID Core Spec’s Service Endpoint type field is not sufficiently expressive for endpoints to fully understand what protocols a service endpoint supports. This specification addresses this gap in the DID Core specification by introducing a straightforward way for endpoints to indicate support of a protocol or service using a structured Profile Document Model. These documents are reusable, decentralized, and expressive documents that allow service providers to connect and interoperate with endpoint systems with less friction.
+
 ### Example
 
 In this example, we illustrate a practical example of profiles. We have a
